@@ -1,6 +1,6 @@
 import { where } from "sequelize";
 import User from "../models/UserModel.js";
-import Pasien from "../models/CatatanModel.js";
+import Pasien from "../models/PasienModel.js";
 
 // ==============================
 //            USER
