@@ -38,12 +38,15 @@ const PeriksaPasien = () => {
       alert("Semua field harus diisi!");
       return;
     }
+<<<<<<< HEAD
     const biayaPeriksa = parseFloat(biaya_periksa);
     if (isNaN(biayaPeriksa)) {
       alert("Biaya periksa harus berupa angka!");
       return;
     }
   
+=======
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
 
     try {
       const res = await axios.post("http://localhost:5000/add-periksa", {
@@ -99,7 +102,11 @@ const PeriksaPasien = () => {
                   type="number"  // Use number input type for biaya
                   className="input"
                   value={biaya_periksa}
+<<<<<<< HEAD
                   onChange={(e) => setBiayaPeriksa(Number(e.target.value))}
+=======
+                  onChange={(e) => setBiayaPeriksa(e.target.value)}
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
                   placeholder="Masukkan biaya periksa"
                   required
                 />

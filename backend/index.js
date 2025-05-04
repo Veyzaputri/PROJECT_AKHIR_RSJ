@@ -27,4 +27,8 @@ app.get("/", async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
 app.listen(5000, "0.0.0.0", ()=> console.log('Server up and running...'));
+=======
+app.listen(5000, "0.0.0.0", ()=> console.log('Server up and running...'));
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3

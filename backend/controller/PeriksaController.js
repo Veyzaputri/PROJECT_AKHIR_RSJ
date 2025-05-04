@@ -10,7 +10,10 @@ export const getPeriksa = async (req, res) => {
         res.status(200).json(response);
     } catch (error) {
         console.log(error.message);
+<<<<<<< HEAD
         res.status(500).json({ msg: "Terjadi kesalahan server" });
+=======
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
     }
 }
 
@@ -24,7 +27,11 @@ export const getPeriksaById = async (req, res) => {
             return res.status(404).json({ msg: "Checkup tidak ditemukan" });
         }
 
+<<<<<<< HEAD
         res.status(200).json(checkup); // Menggunakan checkup bukannya doctor
+=======
+        res.status(200).json(doctor);
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
     } catch (error) {
         console.log(error.message);
         res.status(500).json({ msg: "Terjadi kesalahan server" });
@@ -64,8 +71,12 @@ export const createPeriksa = async (req, res) => {
         id_struk: struk.id_struk,
       });
     } catch (error) {
+<<<<<<< HEAD
         console.log(error); // Log error secara lebih rinci
         res.status(500).json({ message: error.message });
+=======
+      res.status(500).json({ message: error.message });
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
     }
   };  
 
@@ -76,10 +87,16 @@ export const updatePeriksa = async (req, res) => {
                 id_periksa: req.params.id_periksa
             }
         });
+<<<<<<< HEAD
         res.status(200).json({ msg: "Pemeriksaan berhasil diperbarui" });
     } catch (error) {
         console.log(error.message);
         res.status(500).json({ msg: "Terjadi kesalahan server" });
+=======
+        res.status(200).json({ msg: "This Checkup Updated" });
+    } catch (error) {
+        console.log(error.message);
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
     }
 }
 
@@ -90,9 +107,17 @@ export const deletePeriksa = async (req, res) => {
                 id_periksa: req.params.id_periksa
             }
         });
+<<<<<<< HEAD
         res.status(200).json({ msg: "Pemeriksaan berhasil dihapus" });
     } catch (error) {
         console.log(error.message);
         res.status(500).json({ msg: "Terjadi kesalahan server" });
     }
 }
+=======
+        res.status(200).json({ msg: "This Checkup Completed Detele" });
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3

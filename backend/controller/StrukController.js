@@ -41,6 +41,7 @@ export const getStrukById = async (req, res) => {
       include: [
         {
           model: Pasien,
+<<<<<<< HEAD
           as: "pasien",
           attributes: ["nama"],
           
@@ -48,11 +49,20 @@ export const getStrukById = async (req, res) => {
         {
           model: Obat,
           as: "obat",
+=======
+          attributes: ["nama"],
+        },
+        {
+          model: Obat,
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
           attributes: ["nama_obat", "harga"],
         },
         {
           model: Periksa,
+<<<<<<< HEAD
           as: "periksa",
+=======
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
           attributes: ["tanggal_periksa", "biaya_periksa"],
         },
       ],
@@ -70,6 +80,7 @@ export const getStrukById = async (req, res) => {
 
 // Create a new Struk
 export const createStruk = async (req, res) => {
+<<<<<<< HEAD
     try {
         // Mengambil data yang dikirim dari frontend
         const { id_periksa, id_pasien, id_obat } = req.body;
@@ -131,6 +142,40 @@ export const createStruk = async (req, res) => {
 };
   
       
+=======
+  const { id_pasien, id_obat, id_periksa } = req.body;
+
+  if (!id_pasien || !id_obat || !id_periksa) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+
+  try {
+    const obat = await Obat.findByPk(id_obat);
+    const periksa = await Periksa.findByPk(id_periksa);
+
+    if (!obat) {
+      return res.status(404).json({ message: "Obat not found" });
+    }
+
+    if (!periksa) {
+      return res.status(404).json({ message: "Periksa not found" });
+    }
+
+    const total_biaya = obat.harga + periksa.biaya_periksa;
+
+    const newStruk = await Struk.create({
+      id_pasien,
+      id_obat,
+      id_periksa,
+      total_biaya,
+    });
+
+    res.status(201).json(newStruk);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to create Struk: " + error.message });
+  }
+};
+>>>>>>> b5adf4242818a3997fcddb0fbbdf3495784da4a3
 
 // Update Struk by ID
 export const updateStruk = async (req, res) => {
